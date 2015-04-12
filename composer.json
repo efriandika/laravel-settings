@@ -1,0 +1,29 @@
+{
+    "name": "efriandika/settings",
+    "description": "Laravel 5 Persistent Settings",
+    "keywords": [
+        "laravel",
+        "settings",
+        "persistent"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Efriandika Pratama",
+            "email": "efriandika@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "5.0.x"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.6.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Efriandika\\LaravelSettings\\": "src/"
+        }
+    }
+}
