@@ -14,7 +14,7 @@ or modify your `composer.json`:
        
 then run `composer update`:
 
-After updating composer, add the ServiceProvider to the `providers` array in `config/app.php`
+After updating composer, Register the ServiceProvider to the `providers` array in `config/app.php`
 
     'Efriandika\LaravelSettings\SettingsServiceProvider',
     
@@ -22,7 +22,7 @@ Add an alias for the facade to `aliases` array in  your `config/app.php`
 
     'Settings'  => 'Efriandika\LaravelSettings\Facades\Settings',
 
-You can now publish the config and migration files:
+You can publish the config and migration files now (Caution: This command will not work if you don't follow previous instruction):
 
     $ php artisan vendor:publish --provider="Efriandika\LaravelSettings\SettingsServiceProvider"
     
