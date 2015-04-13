@@ -9,7 +9,7 @@ Require this package with composer using the following command:
 or modify your `composer.json`:
    
        "require": {
-          "efriandika/laravel-settings": "dev-labs"
+          "efriandika/laravel-settings": "dev-master"
        }
        
 then run `composer update`:
