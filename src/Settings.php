@@ -144,7 +144,7 @@ class Settings
     {
         $this->cache->flush();
 
-        return $this->database->table($this->config['db_table'])->truncate();
+        return $this->database->table($this->config['db_table'])->delete();
     }
 
     /**

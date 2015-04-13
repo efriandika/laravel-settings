@@ -113,9 +113,8 @@ class SettingsTest extends PHPUnit_Framework_TestCase
         $capsule->bootEloquent();
 
         Capsule::schema()->create('settings', function ($table) {
-            $table->increments('id');
-            $table->string('key')->index()->unique();
-            $table->string('value')->longText();
+            $table->string('key', 100)->index()->unique('key');
+            $table->text('value', 65535)->nullable();
         });
 
         return $capsule->getDatabaseManager();
