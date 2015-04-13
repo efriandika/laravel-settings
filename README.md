@@ -3,18 +3,20 @@
 [![Latest Unstable Version](https://poser.pugx.org/efriandika/laravel-settings/v/unstable.svg)](https://packagist.org/packages/efriandika/laravel-settings) 
 [![License](https://poser.pugx.org/efriandika/laravel-settings/license.svg)](https://packagist.org/packages/efriandika/laravel-settings)
 
+# This Branch is Experimental || [Stable](https://github.com/efriandika/laravel-settings/tree/master)
+
 # Laravel-Settings
 Laravel 5 Persistent Settings (Database + Cache)
 
 ## How to Install
-Require this package with composer using the following command:
+Require this package with composer ([Packagist](https://packagist.org/packages/efriandika/laravel-settings)) using the following command:
 
     composer require efriandika/laravel-settings
 
 or modify your `composer.json`:
    
        "require": {
-          "efriandika/laravel-settings": "dev-master"
+          "efriandika/laravel-settings": "dev-labs"
        }
        
 then run `composer update`:

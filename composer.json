@@ -26,6 +26,9 @@
         "classmap": [
             "src/database/migrations"
         ],
+        "files": [
+            "src/helpers.php"
+        ],
         "psr-4": {
             "Efriandika\\LaravelSettings\\": "src/"
         }
