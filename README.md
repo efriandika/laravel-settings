@@ -1,3 +1,8 @@
+[![Latest Stable Version](https://poser.pugx.org/efriandika/laravel-settings/v/stable.svg)](https://packagist.org/packages/efriandika/laravel-settings) 
+[![Total Downloads](https://poser.pugx.org/efriandika/laravel-settings/downloads.svg)](https://packagist.org/packages/efriandika/laravel-settings) 
+[![Latest Unstable Version](https://poser.pugx.org/efriandika/laravel-settings/v/unstable.svg)](https://packagist.org/packages/efriandika/laravel-settings) 
+[![License](https://poser.pugx.org/efriandika/laravel-settings/license.svg)](https://packagist.org/packages/efriandika/laravel-settings)
+
 # Laravel-Settings
 Laravel 5 Persistent Settings (Database + Cache)
 
@@ -45,7 +50,7 @@ Get a value
     $value = Settings::get('key');
     
 Get a value with Default Value.
-Note: If key is not found (null) in cache or settings table, it will return default value
+> Note: If key is not found (null) in cache or settings table, it will return default value
 
     $value = Settings::get('key', 'Default Value'); 
     
@@ -59,8 +64,8 @@ Forget all values
     
 ### To Do
 
-* Add `settings(key)` helper as an alternative in blade templating
-      
+- Add `settings(key)` helper as an alternative in blade templating
+
 ### License
 
 The Laravel 5 Persistent Settings is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
