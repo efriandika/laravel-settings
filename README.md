@@ -52,9 +52,15 @@ Get a value
     $value = Settings::get('key');
     
 Get a value with Default Value.
+
+    $value = Settings::get('key', 'Default Value');
+    
 > Note: If key is not found (null) in cache or settings table, it will return default value
 
-    $value = Settings::get('key', 'Default Value'); 
+Get a value via an helper
+    
+    $value = settings('key');
+    $value = settings('key', 'default value');
     
 Forget a value
 
@@ -66,9 +72,10 @@ Forget all values
     
 ### To Do
 
-- Add `settings(key)` helper as an alternative in blade templating
+- 
 
 ### License
 
 The Laravel 5 Persistent Settings is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+
 
