@@ -45,7 +45,7 @@ class SettingsTest extends PHPUnit_Framework_TestCase
     public function testGet()
     {
         $this->settings->set('key', 'value');
-        $this->assertEquals('value', $this->settings->get('key'));
+        $this->assertEquals('value', settings('key'));
     }
 
     public function testGetAll()
