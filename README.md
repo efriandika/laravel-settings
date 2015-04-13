@@ -3,8 +3,6 @@
 [![Latest Unstable Version](https://poser.pugx.org/efriandika/laravel-settings/v/unstable.svg)](https://packagist.org/packages/efriandika/laravel-settings) 
 [![License](https://poser.pugx.org/efriandika/laravel-settings/license.svg)](https://packagist.org/packages/efriandika/laravel-settings)
 
-# This Branch is Experimental || [Stable](https://github.com/efriandika/laravel-settings/tree/master)
-
 # Laravel-Settings
 Laravel 5 Persistent Settings (Database + Cache)
 
@@ -16,7 +14,7 @@ Require this package with composer ([Packagist](https://packagist.org/packages/e
 or modify your `composer.json`:
    
        "require": {
-          "efriandika/laravel-settings": "dev-labs"
+          "efriandika/laravel-settings": "1.*"
        }
        
 then run `composer update`:
@@ -52,9 +50,15 @@ Get a value
     $value = Settings::get('key');
     
 Get a value with Default Value.
+
+    $value = Settings::get('key', 'Default Value');
+    
 > Note: If key is not found (null) in cache or settings table, it will return default value
 
-    $value = Settings::get('key', 'Default Value'); 
+Get a value via an helper
+    
+    $value = settings('key');
+    $value = settings('key', 'default value');
     
 Forget a value
 
@@ -66,7 +70,7 @@ Forget all values
     
 ### To Do
 
-- Add `settings(key)` helper as an alternative in blade templating
+- 
 
 ### License
 
