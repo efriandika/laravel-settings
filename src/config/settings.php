@@ -2,10 +2,11 @@
 return [
     /*
 	|--------------------------------------------------------------------------
-	| Cache Filename
+	| Cache
 	|--------------------------------------------------------------------------
 	|
-	| Cache configuration path
+	| Cache Configuration
+    | if cache = true, you must set cache_file path.
 	|
 	*/
     'cache'      => true,
@@ -16,7 +17,7 @@ return [
 	| Table name to store settings
 	|--------------------------------------------------------------------------
 	|
-	| Info: If you change this table name, dont forget to update your settings migrations file.
+	| Attention: If you change this table name, dont forget to update your settings migrations file.
 	|
 	*/
     'db_table'   => 'settings'

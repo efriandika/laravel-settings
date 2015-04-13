@@ -22,7 +22,7 @@ Add an alias for the facade to `aliases` array in  your `config/app.php`
 
     'Settings'  => 'Efriandika\LaravelSettings\Facades\Settings',
 
-You can publish the config and migration files now (Caution: This command will not work if you don't follow previous instruction):
+You can publish the config and migration files now (Attention: This command will not work if you don't follow previous instruction):
 
     $ php artisan vendor:publish --provider="Efriandika\LaravelSettings\SettingsServiceProvider"
     
