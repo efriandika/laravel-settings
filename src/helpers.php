@@ -1,6 +1,6 @@
 <?php
 
-//use Efriandika\LaravelSettings\Facades\Settings;
+use Efriandika\LaravelSettings\Facades\Settings;
 
 if (!function_exists('settings'))
 {
@@ -11,6 +11,6 @@ if (!function_exists('settings'))
      */
     function settings($key, $default = null)
     {
-        return 'value';
+        return Settings::get($key, $default);
     }
 }
