@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Laravel-settings by efriandika</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Laravel-settings</h1>
+        <p>Laravel 5 Persistent Settings (Database + Cache)</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/efriandika/laravel-settings" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/efriandika/laravel-settings/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/efriandika/laravel-settings/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <p><a href="https://packagist.org/packages/efriandika/laravel-settings"><img src="https://poser.pugx.org/efriandika/laravel-settings/v/stable.svg" alt="Latest Stable Version"></a> 
+<a href="https://packagist.org/packages/efriandika/laravel-settings"><img src="https://poser.pugx.org/efriandika/laravel-settings/downloads.svg" alt="Total Downloads"></a> 
+<a href="https://packagist.org/packages/efriandika/laravel-settings"><img src="https://poser.pugx.org/efriandika/laravel-settings/v/unstable.svg" alt="Latest Unstable Version"></a> 
+<a href="https://packagist.org/packages/efriandika/laravel-settings"><img src="https://poser.pugx.org/efriandika/laravel-settings/license.svg" alt="License"></a></p>
+
+<h1>
+<a id="laravel-settings" class="anchor" href="#laravel-settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Laravel-Settings</h1>
+
+<p>Laravel 5 Persistent Settings (Database + Cache)</p>
+
+<h2>
+<a id="how-to-install" class="anchor" href="#how-to-install" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to Install</h2>
+
+<p>Require this package with composer (<a href="https://packagist.org/packages/efriandika/laravel-settings">Packagist</a>) using the following command:</p>
+
+<pre><code>composer require efriandika/laravel-settings
+</code></pre>
+
+<p>or modify your <code>composer.json</code>:</p>
+
+<pre><code>   "require": {
+      "efriandika/laravel-settings": "1.*"
+   }
+</code></pre>
+
+<p>then run <code>composer update</code>:</p>
+
+<p>After updating composer, Register the ServiceProvider to the <code>providers</code> array in <code>config/app.php</code></p>
+
+<pre><code>'Efriandika\LaravelSettings\SettingsServiceProvider',
+</code></pre>
+
+<p>Add an alias for the facade to <code>aliases</code> array in  your <code>config/app.php</code></p>
+
+<pre><code>'Settings'  =&gt; 'Efriandika\LaravelSettings\Facades\Settings',
+</code></pre>
+
+<p>You can publish the config and migration files now (Attention: This command will not work if you don't follow previous instruction):</p>
+
+<pre><code>$ php artisan vendor:publish --provider="Efriandika\LaravelSettings\SettingsServiceProvider" --force
+</code></pre>
+
+<p>Change <code>config/settings.php</code> according to your needs. If you change <code>db_table</code>, don't forget to change the table's name
+in the migration file as well.</p>
+
+<p>Create the <code>settings</code> table. </p>
+
+<pre><code>$ php artisan migrate
+</code></pre>
+
+<h2>
+<a id="how-to-use-it" class="anchor" href="#how-to-use-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to Use it</h2>
+
+<p>Set a value</p>
+
+<pre><code>Settings::set('key', 'value');
+</code></pre>
+
+<p>Get a value</p>
+
+<pre><code>$value = Settings::get('key');
+</code></pre>
+
+<p>Get a value with Default Value.</p>
+
+<pre><code>$value = Settings::get('key', 'Default Value');
+</code></pre>
+
+<blockquote>
+<p>Note: If key is not found (null) in cache or settings table, it will return default value</p>
+</blockquote>
+
+<p>Get a value via an helper</p>
+
+<pre><code>$value = settings('key');
+$value = settings('key', 'default value');
+</code></pre>
+
+<p>Forget a value</p>
+
+<pre><code>Settings::forget('key');
+</code></pre>
+
+<p>Forget all values</p>
+
+<pre><code>Settings::flush();
+</code></pre>
+
+<h3>
+<a id="to-do" class="anchor" href="#to-do" aria-hidden="true"><span class="octicon octicon-link"></span></a>To Do</h3>
+
+<ul>
+<li>
+</li>
+</ul>
+
+<h3>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h3>
+
+<p>The Laravel 5 Persistent Settings is open-sourced software licensed under the <a href="http://opensource.org/licenses/MIT">MIT license</a></p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/efriandika">efriandika</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-61911749-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
