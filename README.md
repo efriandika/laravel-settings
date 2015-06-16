@@ -25,7 +25,7 @@ After updating composer, Register the ServiceProvider to the `providers` array i
     
 Add an alias for the facade to `aliases` array in  your `config/app.php`
 
-    'Settings'  => 'Efriandika\LaravelSettings\Facades\Settings',
+    'Settings'  => Efriandika\LaravelSettings\Facades\Settings::class,
 
 You can publish the config and migration files now (Attention: This command will not work if you don't follow previous instruction):
 
