@@ -6,6 +6,15 @@
 # Laravel-Settings
 Laravel 5.1.x Persistent Settings (Database + Cache)  
 
+### Attention: for update to v1.2.0
+Re-Publish new migration file
+
+    $ php artisan vendor:publish --provider="Efriandika\LaravelSettings\SettingsServiceProvider" --force
+    
+And run
+
+    $ php artisan migrate
+
 ## How to Install
 Require this package with composer ([Packagist](https://packagist.org/packages/efriandika/laravel-settings)) using the following command:
 
@@ -27,7 +36,7 @@ Add an alias for the facade to `aliases` array in  your `config/app.php`
 
     'Settings'  => Efriandika\LaravelSettings\Facades\Settings::class,
 
-You can publish the config and migration files now (Attention: This command will not work if you don't follow previous instruction):
+Publish the config and migration files now (Attention: This command will not work if you don't follow previous instruction):
 
     $ php artisan vendor:publish --provider="Efriandika\LaravelSettings\SettingsServiceProvider" --force
     
@@ -39,7 +48,7 @@ Create the `settings` table.
     $ php artisan migrate
     
 
-## How to Use it
+## How to Use it?
 
 Set a value
 
@@ -68,6 +77,30 @@ Forget all values
 
     Settings::flush();
     
+## Fallback to Laravel Config (available in v1.2.0)
+
+How to activate?
+
+    // Change your config/settings.php
+    'fallback'   => true
+    
+Example
+
+    /* 
+     * If the value with key => mail.host is not found in cache or DB of Larave Settings
+     * it will return same value as config::get('mail.host');
+     */     
+    Settings::get('mail.host');
+
+> Note: It will work if default value in laravel setting is not set
+    
+### Changelogs
+v1.2.0 - Dec 16th, 2015
+
+* Bugs fix
+* Adding Feature: Fallback Value 
+
+
 ### To Do
 
 - 

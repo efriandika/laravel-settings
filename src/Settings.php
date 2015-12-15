@@ -1,6 +1,7 @@
 <?php namespace Efriandika\LaravelSettings;
 
 use Illuminate\Database\DatabaseManager;
+use Illuminate\Support\Facades\Config;
 
 /**
  * Class Settings
@@ -55,7 +56,14 @@ class Settings
     {
         $value = $this->fetch($key);
 
-        return (!is_null($value)) ? $value : $default;
+        if(!is_null($value))
+            return $value;
+        else if($default != null)
+            return $default;
+        else if($this->config['fallback'])
+            return Config::get($key, null);
+        else
+            return $default;
     }
 
     /**
