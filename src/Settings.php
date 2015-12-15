@@ -70,7 +70,7 @@ class Settings
             return $this->cache->get($key);
         }
 
-        $row = $this->database->table($this->config['db_table'])->where('key', $key)->first(['value']);
+        $row = $this->database->table($this->config['db_table'])->where('setting_key', $key)->first(['setting_value']);
 
         return (!is_null($row)) ? $this->cache->set($key, unserialize($row->value)) : null;
     }
@@ -88,7 +88,7 @@ class Settings
         if ($this->cache->hasKey($key)) {
             return true;
         }
-        $row = $this->database->table($this->config['db_table'])->where('key', $key)->first(['value']);
+        $row = $this->database->table($this->config['db_table'])->where('setting_key', $key)->first(['setting_value']);
 
         return (count($row) > 0);
     }
@@ -105,15 +105,15 @@ class Settings
     {
         $value = serialize($value);
 
-        $setting = $this->database->table($this->config['db_table'])->where('key', $key)->first();
+        $setting = $this->database->table($this->config['db_table'])->where('setting_key', $key)->first();
 
         if (is_null($setting)) {
             $this->database->table($this->config['db_table'])
-                           ->insert(['key' => $key, 'value' => $value]);
+                           ->insert(['setting_key' => $key, 'setting_value' => $value]);
         } else {
             $this->database->table($this->config['db_table'])
-                           ->where('key', $key)
-                           ->update(['value' => $value]);
+                           ->where('setting_key', $key)
+                           ->update(['setting_value' => $value]);
         }
 
         $this->cache->set($key, unserialize($value));
@@ -131,7 +131,7 @@ class Settings
      */
     public function forget($key)
     {
-        $this->database->table($this->config['db_table'])->where('key', $key)->delete();
+        $this->database->table($this->config['db_table'])->where('setting_key', $key)->delete();
         $this->cache->forget($key);
     }
 
