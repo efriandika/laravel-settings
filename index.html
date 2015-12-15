@@ -39,9 +39,17 @@
 <p>Laravel 5.1.x Persistent Settings (Database + Cache)  </p>
 
 <h3>
-<a id="attention" class="anchor" href="#attention" aria-hidden="true"><span class="octicon octicon-link"></span></a>Attention</h3>
+<a id="attention-for-update-to-v120" class="anchor" href="#attention-for-update-to-v120" aria-hidden="true"><span class="octicon octicon-link"></span></a>Attention: for update to v1.2.0</h3>
 
-<p>You can use <a href="https://github.com/efriandika/laravel-settings/releases/tag/v1.0.1">v1.0.1</a> for laravel 5.0.x</p>
+<p>Re-Publish new migration file</p>
+
+<pre><code>$ php artisan vendor:publish --provider="Efriandika\LaravelSettings\SettingsServiceProvider" --force
+</code></pre>
+
+<p>And run</p>
+
+<pre><code>$ php artisan migrate
+</code></pre>
 
 <h2>
 <a id="how-to-install" class="anchor" href="#how-to-install" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to Install</h2>
@@ -70,7 +78,7 @@
 <pre><code>'Settings'  =&gt; Efriandika\LaravelSettings\Facades\Settings::class,
 </code></pre>
 
-<p>You can publish the config and migration files now (Attention: This command will not work if you don't follow previous instruction):</p>
+<p>Publish the config and migration files now (Attention: This command will not work if you don't follow previous instruction):</p>
 
 <pre><code>$ php artisan vendor:publish --provider="Efriandika\LaravelSettings\SettingsServiceProvider" --force
 </code></pre>
@@ -84,7 +92,7 @@ in the migration file as well.</p>
 </code></pre>
 
 <h2>
-<a id="how-to-use-it" class="anchor" href="#how-to-use-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to Use it</h2>
+<a id="how-to-use-it" class="anchor" href="#how-to-use-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to Use it?</h2>
 
 <p>Set a value</p>
 
@@ -121,12 +129,43 @@ $value = settings('key', 'default value');
 <pre><code>Settings::flush();
 </code></pre>
 
+<h2>
+<a id="fallback-to-laravel-config-available-in-v120" class="anchor" href="#fallback-to-laravel-config-available-in-v120" aria-hidden="true"><span class="octicon octicon-link"></span></a>Fallback to Laravel Config (available in v1.2.0)</h2>
+
+<p>How to activate?</p>
+
+<pre><code>// Change your config/settings.php
+'fallback'   =&gt; true
+</code></pre>
+
+<p>Example</p>
+
+<pre><code>/* 
+ * If the value with key =&gt; mail.host is not found in cache or DB of Larave Settings
+ * it will return same value as config::get('mail.host');
+ */     
+Settings::get('mail.host');
+</code></pre>
+
+<blockquote>
+<p>Note: It will work if default value in laravel setting is not set</p>
+</blockquote>
+
+<h3>
+<a id="changelogs" class="anchor" href="#changelogs" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changelogs</h3>
+
+<p>v1.2.0 - Dec 16th, 2015</p>
+
+<ul>
+<li>Bugs fix</li>
+<li>Adding Feature: Fallback Value </li>
+</ul>
+
 <h3>
 <a id="to-do" class="anchor" href="#to-do" aria-hidden="true"><span class="octicon octicon-link"></span></a>To Do</h3>
 
 <ul>
 <li>
-</li>
 </ul>
 
 <h3>
