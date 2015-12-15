@@ -6,9 +6,6 @@
 # Laravel-Settings
 Laravel 5.1.x Persistent Settings (Database + Cache)  
 
-### Attention
-You can use [v1.0.1](https://github.com/efriandika/laravel-settings/releases/tag/v1.0.1) for laravel 5.x
-
 ## How to Install
 Require this package with composer ([Packagist](https://packagist.org/packages/efriandika/laravel-settings)) using the following command:
 
