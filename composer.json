@@ -23,9 +23,6 @@
         "illuminate/events": "5.1.*"
     },
     "autoload": {
-        "classmap": [
-            "src/database/migrations"
-        ],
         "files": [
             "src/helpers.php"
         ],
