@@ -80,7 +80,7 @@ class Settings
 
         $row = $this->database->table($this->config['db_table'])->where('setting_key', $key)->first(['setting_value']);
 
-        return (!is_null($row)) ? $this->cache->set($key, unserialize($row->value)) : null;
+        return (!is_null($row)) ? $this->cache->set($key, unserialize($row->setting_value)) : null;
     }
 
 
