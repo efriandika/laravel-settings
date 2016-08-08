@@ -125,6 +125,8 @@ class Cache
     public function flush()
     {
         file_put_contents($this->cacheFile, json_encode([]));
+        // fixed the set after immediately the flush, should be returned empty
+        $this->settings = [];
     }
 
     /**
