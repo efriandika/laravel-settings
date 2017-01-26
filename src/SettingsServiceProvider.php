@@ -37,7 +37,7 @@ class SettingsServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__ . '/config/settings.php', 'settings'
         );
-        $this->app['settings'] = $this->app->share(function ($app) {
+        $this->app->singleton('settings', function ($app) {
 
             $config = $app->config->get('settings', [
                 'cache_file' => storage_path('settings.json'),
