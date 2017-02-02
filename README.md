@@ -87,7 +87,7 @@ How to activate?
 Example
 
     /* 
-     * If the value with key => mail.host is not found in cache or DB of Larave Settings
+     * If the value with key => mail.host is not found in cache or DB of Laravel Settings
      * it will return same value as config::get('mail.host');
      */     
     Settings::get('mail.host');
