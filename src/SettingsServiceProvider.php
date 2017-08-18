@@ -37,6 +37,9 @@ class SettingsServiceProvider extends ServiceProvider
         $this->mergeConfigFrom(
             __DIR__ . '/config/settings.php', 'settings'
         );
+        
+        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
+        
         $this->app->singleton('settings', function ($app) {
 
             $config = $app->config->get('settings', [
