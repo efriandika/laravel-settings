@@ -38,12 +38,10 @@ class SettingsServiceProvider extends ServiceProvider
             __DIR__ . '/config/settings.php', 'settings'
         );
         $this->app->singleton('settings', function ($app) {
-
             $config = $app->config->get('settings', [
                 'cache_file' => storage_path('settings.json'),
                 'db_table'   => 'settings'
             ]);
-
             return new Settings($app['db'], new Cache($config['cache_file']), $config);
         });
     }
