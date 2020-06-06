@@ -1,6 +1,8 @@
 {
     "name": "efriandika/laravel-settings",
     "description": "Laravel 5 Persistent Settings",
+    "homepage": "https://github.com/efriandika/laravel-settings",
+    "version": "1.2.5",
     "keywords": [
         "laravel",
         "settings",
@@ -13,6 +15,10 @@
             "email": "efriandika@gmail.com"
         }
     ],
+    "support": {
+    "source": "https://github.com/efriandika/laravel-settings/",
+    "issues": "https://github.com/efriandika/laravel-settings/issues"
+  },
     "require": {
         "php": ">=5.5.9",
         "illuminate/support": "5.*"
